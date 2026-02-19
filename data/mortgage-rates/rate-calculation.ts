@@ -161,7 +161,7 @@ export function calculateRates(params: RateCalculationParams): RateData[] {
 
     return {
       lender: lender.name,
-      logo: lender.name,
+      logo: lender.logo || lender.name,
       nmls: lender.nmls,
       rate: finalRate.toFixed(3),
       term: termLabel,

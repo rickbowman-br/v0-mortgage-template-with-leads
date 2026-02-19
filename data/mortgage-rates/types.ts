@@ -3,6 +3,7 @@
 export interface BaseLender {
   name: string
   nmls: string
+  logo?: string
   phone: string | null
   rating: number
   reviews: number

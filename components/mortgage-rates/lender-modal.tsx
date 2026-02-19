@@ -22,9 +22,19 @@ export function LenderModal({ lender, onClose, onStartLeadFlow }: LenderModalPro
         {/* Sticky Top Section */}
         <div className="flex items-center justify-between p-4 md:p-6 border-b bg-white rounded-t-lg py-3 md:py-4">
           <div className="flex items-center gap-3 md:gap-4">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-              <span className="text-blue-600 font-bold text-base md:text-lg">{lenderInitial}</span>
-            </div>
+            {lender.logo && lender.logo.startsWith('http') ? (
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center p-2">
+                <img 
+                  src={lender.logo} 
+                  alt={`${lenderName} logo`} 
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            ) : (
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center border border-gray-300">
+                <span className="text-blue-600 font-bold text-base md:text-lg">{lenderInitial}</span>
+              </div>
+            )}
             <h2 className="text-lg md:text-xl font-semibold text-gray-900">{lenderName}</h2>
           </div>
           <div className="flex items-center gap-4 md:gap-8">
