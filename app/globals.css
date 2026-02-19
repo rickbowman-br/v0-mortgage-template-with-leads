@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Circular Std Font */
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-book-italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-medium-italic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-bold-italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://bfletnsjftkxgijnmjdp.supabase.co/storage/v1/object/public/fonts/circular-black-italic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --font-circular: "Circular Std", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: var(--font-circular);
+    --font-mono: ui-monospace, monospace;
+    
+    /* Bankrate brand semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 220 65% 12%; /* blue-900 equivalent */
+    --card: 0 0% 100%;
+    --card-foreground: 220 65% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 65% 12%;
+    --primary: 220 100% 50%; /* blue-600 #0157FF */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 320 38% 94%; /* lavender-200 #F0DCEF */
+    --secondary-foreground: 320 65% 15%;
+    --muted: 220 47% 97%; /* blue-50 */
+    --muted-foreground: 220 10% 40%;
+    --accent: 168 100% 32%; /* teal-500 #00A391 */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 5 74% 63%; /* coral-500 #E5665E */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 27% 92%;
+    --input: 220 27% 92%;
+    --ring: 220 100% 50%; /* blue-600 */
+    --radius: 0.5rem;
+    
+    /* Chart colors using brand palette */
+    --chart-1: 220 100% 50%; /* blue-600 */
+    --chart-2: 168 100% 32%; /* teal-500 */
+    --chart-3: 320 38% 66%; /* lavender-500 */
+    --chart-4: 43 82% 57%; /* yellow-300 */
+    --chart-5: 5 74% 63%; /* coral-500 */
+    
+    --sidebar-background: 220 47% 97%;
+    --sidebar-foreground: 220 65% 12%;
+    --sidebar-primary: 220 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 47% 94%;
+    --sidebar-accent-foreground: 220 65% 12%;
+    --sidebar-border: 220 27% 92%;
+    --sidebar-ring: 220 100% 50%;
+  }
+  
+  .dark {
+    --background: 220 65% 12%;
+    --foreground: 220 47% 97%;
+    --card: 220 55% 16%;
+    --card-foreground: 220 47% 97%;
+    --popover: 220 55% 16%;
+    --popover-foreground: 220 47% 97%;
+    --primary: 220 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 320 30% 25%;
+    --secondary-foreground: 320 38% 94%;
+    --muted: 220 40% 20%;
+    --muted-foreground: 220 20% 65%;
+    --accent: 168 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 5 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 220 100% 60%;
+    --chart-1: 220 100% 60%;
+    --chart-2: 168 100% 40%;
+    --chart-3: 320 38% 70%;
+    --chart-4: 43 82% 60%;
+    --chart-5: 5 74% 65%;
+    --sidebar-background: 220 55% 8%;
+    --sidebar-foreground: 220 47% 95%;
+    --sidebar-primary: 220 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 40% 15%;
+    --sidebar-accent-foreground: 220 47% 95%;
+    --sidebar-border: 220 40% 15%;
+    --sidebar-ring: 220 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-circular);
+  }
+}
