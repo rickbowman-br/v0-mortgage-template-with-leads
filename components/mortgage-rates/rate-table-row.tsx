@@ -28,8 +28,16 @@ export function RateTableRow({
       <div className="md:hidden space-y-3 py-4">
         {/* Top row: Logo and menu */}
         <div className="flex items-center justify-between">
-          <div className="w-[120px] h-[45px] bg-gradient-to-br from-gray-100 to-gray-200 rounded flex items-center justify-center border border-gray-300 shadow-sm">
-            <span className="text-sm text-gray-900 font-bold">{lender.lender}</span>
+          <div className="w-[120px] h-[45px] bg-gradient-to-br from-gray-100 to-gray-200 rounded flex items-center justify-center border border-gray-300 shadow-sm p-2">
+            {lender.logo && lender.logo.startsWith('http') ? (
+              <img 
+                src={lender.logo} 
+                alt={`${lender.lender} logo`} 
+                className="max-w-full max-h-full object-contain"
+              />
+            ) : (
+              <span className="text-sm text-gray-900 font-bold">{lender.lender}</span>
+            )}
           </div>
           <button onClick={() => onSelectLender(lender)} className="text-gray-400 hover:text-gray-600">
             <MoreVertical className="w-5 h-5" />
@@ -110,8 +118,16 @@ export function RateTableRow({
         {/* Lender Info */}
         <div className="col-span-12 sm:col-span-3">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-[120px] h-[45px] bg-gradient-to-br from-gray-100 to-gray-200 rounded flex items-center justify-center flex-shrink-0 border border-gray-300 shadow-sm">
-              <span className="text-sm text-gray-900 font-bold">{lender.lender}</span>
+            <div className="w-[120px] h-[45px] bg-gradient-to-br from-gray-100 to-gray-200 rounded flex items-center justify-center flex-shrink-0 border border-gray-300 shadow-sm p-2">
+              {lender.logo && lender.logo.startsWith('http') ? (
+                <img 
+                  src={lender.logo} 
+                  alt={`${lender.lender} logo`} 
+                  className="max-w-full max-h-full object-contain"
+                />
+              ) : (
+                <span className="text-sm text-gray-900 font-bold">{lender.lender}</span>
+              )}
             </div>
           </div>
           <p className="text-xs text-gray-600 mb-2">{lender.nmls}</p>

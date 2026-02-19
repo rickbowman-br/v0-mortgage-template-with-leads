@@ -3,6 +3,17 @@ import type { BaseLender, RateData } from "./types"
 
 export const LENDERS: BaseLender[] = [
   {
+    name: "TOMO",
+    nmls: "NMLS #2059741 | State Lic: FL0023357",
+    logo: "https://www.brimg.net/system/img/inst/11845_hires_logo_2x.png?optimize=high&auto=webp",
+    phone: null,
+    rating: 4.9,
+    reviews: 287,
+    specialties: ["30yr", "20yr", "15yr"],
+    mortgageTypes: ["purchase", "refinance"],
+    features: ["Digital Application", "Fast Closing", "No Hidden Fees"],
+  },
+  {
     name: "Sage",
     nmls: "NMLS #3304 | State Lic: L-140074",
     phone: "(866) 439-3995",
@@ -279,7 +290,7 @@ export const LENDERS: BaseLender[] = [
 export function getInitialRateData(): RateData[] {
   return LENDERS.slice(0, 5).map((lender, index) => ({
     lender: lender.name,
-    logo: lender.name,
+    logo: lender.logo || lender.name,
     nmls: lender.nmls,
     rate: ["5.375", "5.490", "5.490", "5.500", "5.625"][index],
     term: "30 year fixed",
