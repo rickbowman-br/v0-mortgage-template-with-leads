@@ -15,7 +15,8 @@ export const LENDERS: BaseLender[] = [
   },
   {
     name: "Sage",
-    nmls: "NMLS #3304 | State Lic: L-140074",
+    nmls: "NMLS #3304 | State Lic: FR0018447",
+    logo: "https://www.brimg.net/system/img/inst/11968_hires_logo_2x.png?optimize=high&auto=webp",
     phone: "(866) 439-3995",
     rating: 4.8,
     reviews: 620,
